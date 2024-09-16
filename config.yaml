@@ -1,0 +1,27 @@
+# AWS Configuration for SNS Alerts
+aws:
+  region: "your-aws-region"  # e.g., us-east-1
+  sns_topic_arn: "your-sns-topic-arn"  # e.g., arn:aws:sns:us-east-1:123456789012:AnomalyDetection
+
+# Kafka Configuration for Real-Time Data Ingestion
+kafka:
+  bootstrap_servers: "your-kafka-bootstrap-server"  # e.g., localhost:9092
+  topic_name: "your-kafka-topic-name"  # e.g., security_systems_topic
+  group_id: "anomaly-detection-group"
+
+# Encryption Key for Secure Data Processing
+encryption_key: "your-fernet-encryption-key"  # Generate your own Fernet key
+
+# Model Paths (used for loading YOLO model and other pre-trained models)
+models:
+  yolo_weights: "models/yolov3.weights"
+  yolo_cfg: "models/yolov3.cfg"
+  yolo_classes: "models/coco.names"
+
+# MLFlow Configuration (used for tracking models)
+mlflow:
+  experiment_name: "AnomalyDetectionAutoML"
+
+# Rasa Chatbot Configuration
+rasa:
+  endpoint: "http://localhost:5005/webhooks/rest/webhook"
